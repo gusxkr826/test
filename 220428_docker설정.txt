@@ -1,0 +1,32 @@
+1)
+
+https://www.docker.com/products/docker-desktop/
+
+windows version download
+
+ 
+
+2)
+
+github id 생성 후 아래 repo fork
+
+https://github.com/siliconii-hanjin/laravel.git
+
+3)
+D에 docker 폴더 만들기
+fork된 repo를 git clone
+
+4)
+첨부파일이 있는 곳에서 docker load -i local_v1.tar
+
+docker run -itd -p 8000:80 -p 22:22 -v D:\docker\laravel:/www/laravel --name local local:v1 /bin/bash
+
+sudo su
+
+cd /www/laravel
+
+composer install 
+
+scp root@192.168.0.39:~/.env .
+
+localhost:8000/api/itid/999
