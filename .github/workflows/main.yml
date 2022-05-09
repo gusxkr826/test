@@ -12,6 +12,7 @@ jobs:
       - name: git clone
         uses: actions/checkout@v2   
    
+   
       - name: deploy
         uses: appleboy/ssh-action@master
         with:
