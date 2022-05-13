@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - main
-
+ 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
     steps:
       - name: git clone
         uses: actions/checkout@v2   
+ 
    
       - name: deploy
         uses: appleboy/ssh-action@master
@@ -22,3 +23,6 @@ jobs:
           script: |
             cd /var/www/html/laravel
             git pull https://github.com/siliconii-hanjin/laravel.git
+            sudo chown -R www-data:www-data storage
+            sudo chown -R www-data:www-data bootstrap/cache/
+            sudo chmod -R 755 bootstrap/cache/
